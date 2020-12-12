@@ -2,7 +2,12 @@
 
 
 :root{
-    --main-pink:#c83aa2;
+    --main-pinkviolet:#A47291;
+    --main-violet:#591455;
+    --main-darkviolet:#390F3D;
+    --main-babyblue:#D4E2EB;
+    --main-darkblue:#253C59;
+
 }
 
 
@@ -14,6 +19,9 @@
     box-sizing:border-box;
     font-family: 'Poppins' , snas-serif;
 }
+
+
+/* banner */
 
 .banner{
     position:relative;
@@ -65,23 +73,89 @@
     }
 }
 
-section{
-    position: relative;
-    padding:75px 100px;
-}
 section h2{
-    position: relative;
-    font-size:2.5rem;
-    margin-bottom:20px;
+    font-size:40px;
 }
 
+/* portfolio */
+
+.portfolio{
+    background-color: var(--main-violet);
+    height:100vh;
+    width:100vw;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    color:#eee;
+}
+
+.container_por{
+    position:relative;
+    width:70vw;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+    background-color:var(--main-violet);
+    padding:80px 40px;
+}
+
+.container_por .card{
+    position:relative;
+    max-width:300px;
+    height:215px;
+    margin:30px 10px;
+    padding:20px 15px;
+    display:flex;
+    flex-direction:column;
+    box-shadow:0 5px 202px var(--main-pinkviolet);
+    transition:0.3s ease-in-out;
+}
+
+.container_por .card:hover{
+    height:300px;
+}
+
+.container_por .card .imageBox{
+    position:relative;
+    width:260px;
+    height:260px;
+    top:-60px;
+    /* box-shadow:0 5px 20px var(--main-darkviolet); */
+
+}
+.container_por .card .imageBox img{
+    max-width:100%;
+    border-radius:4px;
+}
+.imageBox{
+    width:300px;
+    height:300px;
+}
+
+.container_por .card .content_por{
+    margin-top:-140px;
+    padding:10px 15px;
+    text-align:center;
+    color:#111;
+    opacity:0;
+    visibility: hidden;
+    transition:0.3s ease-in-out;
+}
+
+.container_por .card:hover .content_por{
+    visibility: visible;
+    opacity:1;
+    margin-top:-100px;
+    transition-delay: 0.2s;
+}
 
 
 
 
 
 .contactme{
-    background-color:var(--main-pink);
+    background-color:#ddd;
     width:100vw;
     height:80vh;
     text-align:center;
