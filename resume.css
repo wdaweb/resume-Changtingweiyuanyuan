@@ -1,5 +1,13 @@
 @import url('http://font.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+
+:root{
+    --main-pink:#c83aa2;
+}
+
+
+
+
 *{
     margin:0;
     padding:0;
@@ -65,4 +73,34 @@ section h2{
     position: relative;
     font-size:2.5rem;
     margin-bottom:20px;
+}
+
+
+
+
+
+
+.contactme{
+    background-color:var(--main-pink);
+    width:100vw;
+    height:80vh;
+    text-align:center;
+    /* display:flex; */
+    /* justify-content:center; */
+}
+.formBlock{
+    background-color:blue !important;
+    width:50%;
+    height:60vh;
+    padding-left:20px;
+    margin-top:20vh;
+    text-align:left;
+    display:flex;
+}
+.contactImg{
+    background-image: url(th.jpeg);
+    background-size:cover;
+    background-position:center;
+    width:50%;
+    height:60vh;
 }
