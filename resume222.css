@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+:root{
+    --main-red:#cb2727;
+    --main-or:#E19467;
+    --main-best_darkgreen:#425332;
+    --main-darkgreen:#3f5d24;
+    --main-babygreen:#9aa88a;
+    --main-lightgray:#dcdcdc;
+    --main-darkgray:#595959;
+    --main-purewhite:#f7f7f7;
+    --main-background_white:#EEECE8;
+}
+
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    /* font-family: 'Poppins' , snas-serif; */
+    font-family: 'Libre Baskerville', serif;
+    overscroll-behavior:hidden;
+    overflow-x:hidden;
+}
+
+
+/* banner */
+
+.banner{
+    position:relative;
+    width:100%;
+    height:100vh;
+    background: url(image/12345.jpg);
+    background-size:cover;
+    background-position:bottom;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /* z-index:5; */
+}
+
+.banner #text{
+    position:relative;
+    height:20vh;
+    margin-bottom:5vh;
+    font-size:5rem;
+    text-align:center;
+    color: var(--main-background_white);
+
+}
+
+.banner .clouds{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    pointer-events:none;
+}
+
+.banner .clouds img{
+    position: absolute;
+    bottom:0;
+    max-width:100%;
+    animation:animate calc(3s * var(--a)) linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        opacity:0;
+        transform:scale(1);
+    }
+    25%,75%{
+        opacity: 1;
+    }
+    100%{
+        opacity:0;
+        transform:scale(3);
+    }
+}
+
+/* title-text */
+
+.title{
+    color: var(--main-background_white);
+    margin-top:1em;
+    font-size:4em;
+    text-shadow:-1px 1px 0 var(--main-darkgreen),
+                1px 1px 0 var(--main-darkgreen),
+                1px -1px 0 var(--main-darkgreen),
+                -1px -1px 0 var(--main-darkgreen);
+}
+
+/* main_block */
+.main_block{
+    max-height:110vh;
+    min-height:110vh;
+    width:100vw !important;
+    margin:0 !important;
+    padding-left:13%;
+    padding-right:13%;
+    background-color: var(--main-background_white);
+}
+
+.for_bg{
+    position: relative;
+}
+
+/* introduction */
+
+.intro_bgpic{
+    position:absolute;
+    top:25%;
+    left:15%;
+    height:65%;
+    width:80%;
+}
+/* 15 */
+
+.intro_contents{
+    height:75vh;
+    margin-top:10vh;
+    position:relative;
+    /* border:solid #111 1px; */
+}
+/* 70 */
+
+.intro_pic{
+    position:absolute;
+    border:#111 1px solid;
+    height:65%;
+    width:25%;
+}
+.intro_mypic{
+    height:100%;
+    width:100%;
+}
+
+.intro_text{
+    height:60%;
+    width:58%;
+    position:relative;
+    top:25%;
+    left:22%;
+    border:5px solid var(--main-best_darkgreen);
+    padding:1em;
+    background-color: var(--main-background_white);
+    color:var(--main-red);
+    font-size:1.4em;
+    z-index:1;
+}
+
+.intro_h3{
+    color:#111;
+}
+
+
+/* skills */
+
+
+.skill_line{
+    border-bottom:1px solid var(--main-red);
+    width:100vw;
+    height:1px;
+    transform:translate(-13%,0);
+    margin-top:5vh;
+    margin-bottom:5vh;
+}
+/* 6 */
+.skill_nav{
+    display:flex;
+    justify-content:space-evenly;
+    text-align:center;
+}
+.skill_btn{
+    border:none;
+    font-size:1.5em;
+    background-color: transparent;
+}
+
+
+.skill_content{
+    /* position:relative; */
+    display:flex;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+    width:100%;
+}
+.skill_items{
+    width:30%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    height:20vh;
+}
+.skill_content_xline{
+    border-bottom:1px solid var(--main-red);
+    height:1px;
+    width:100%;
+}
+.skill_content_yline1{
+    border-right:1px solid var(--main-red);
+    height:65vh;
+    width:1px;
+    position:absolute;
+    transform: translate(-24vh,-7.2%) !important;
+}
+.skill_content_yline2{
+    border-right:1px solid var(--main-red);
+    height:65vh;
+    width:1px;
+    position:absolute;
+    transform: translate(24vh,-7.2%) !important;
+}
+.skill_score{
+    font-size:3em;
+}
+
+/* contact me */
+
+.email_bgpic{
+    
+    position: absolute;
+    background-size:inherit;
+    height:100%;
+}
+
+.contact_me{
+    flex-direction: column;
+}
+
+.email_nav{
+    display:flex;
+    justify-content:space-around;
+    margin-bottom:3vh;
+    margin-top:5vh;
+}
+/* 8 */
+.email_navtext{
+    border:none;
+    color:var(--main-red);
+    text-decoration:bold;
+    background-color: transparent;
+}
+.email_navline{
+    height:inherit;
+    width:2px;
+    background-color: #111;
+    text-decoration:bold;
+
+}
+
+
+.email_hblock{
+    border:1px solid var(--main-darkgreen);
+    padding:0.5em;
+    margin-bottom:5vh;;
+}
+/* 5 */
+
+.email_text{
+    margin-top:15vh;
+    padding:0;
+}
+/* 10 */
+
+.email_textp{
+    font-size: 3.5em;
+    box-shadow:inset 50em 1em 0em var(--main-lightgray);
+    padding-right:0.2em;
+    color:var(--main-red);
+}
+.email_text2{
+    font-size: 1em;
+    top:2em;
+    color:#111;
+}
+
+.email_copyright{
+    margin-top:26vh;
+    text-align:center;
+}
+/* 26 */
+
+
