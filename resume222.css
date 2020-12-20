@@ -106,6 +106,7 @@
 
 .for_bg{
     position: relative;
+    overflow:hidden;
 }
 
 /* introduction */
@@ -144,7 +145,7 @@
     position:relative;
     top:25%;
     left:22%;
-    border:5px solid var(--main-best_darkgreen);
+    border:3px solid var(--main-best_darkgreen);
     padding:1em;
     background-color: var(--main-background_white);
     color:var(--main-red);
@@ -156,6 +157,81 @@
     color:#111;
 }
 
+
+/* work experience */
+.work_bgpic1{
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:10%;
+}
+.work_bgpic2{
+    position:absolute;
+    height:100%;
+    width:100%;
+    right:5%;
+}
+.work_line{
+    border-bottom:1px solid var(--main-red);
+    height:1px;
+    width:100%;
+    margin-top:5vh;
+    margin-bottom:10vh;
+}
+/* 15 */
+.work_content{
+    position:relative;
+    height:70vh;
+    display:flex;
+    flex-wrap:nowrap;
+    padding:5%;
+    /* text-align:center; */
+}
+/* 70 */
+.work-items{
+    position:absolute;
+    height:61%;
+    width:30%;
+    border:2px solid var(--main-best_darkgreen);
+    padding:3%;
+    letter-spacing:0.1em;
+}
+.wi1{
+    transform: rotate(-10deg);
+    left:6%;
+    background-color:var(--main-background_white);
+    color:var(--main-red);
+}
+.wi2{
+    /* transform: rotate(5deg); */
+    top:12.5%;
+    left:35%;
+    background-color:var(--main-background_white);
+    color:var(--main-red);
+}
+.wi3{
+    transform: rotate(15deg);
+    top:25%;
+    left:63%;
+    background-color:var(--main-babygreen);
+}
+.work-img1{
+    position:absolute;
+    height:140px;
+    width:130px;
+    top:52%;
+    left:21%;
+    transform: rotate(-10deg);
+}
+.work-img3{
+    position:absolute;
+    /* display:var(--main-li; */
+    height:140px;
+    width:130px;
+    top:70%;
+    left:73%;
+    transform: rotate(15deg);
+}
 
 /* skills */
 
@@ -184,38 +260,51 @@
 .skill_content{
     /* position:relative; */
     display:flex;
-    justify-content:space-evenly;
+    justify-content:center;
     flex-wrap:wrap;
     width:100%;
 }
 .skill_items{
     width:30%;
     display:flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
     height:20vh;
+    align-items:center;
 }
 .skill_content_xline{
     border-bottom:1px solid var(--main-red);
     height:1px;
     width:100%;
+    transform: translate(0,-3vh);
 }
 .skill_content_yline1{
     border-right:1px solid var(--main-red);
     height:65vh;
     width:1px;
     position:absolute;
-    transform: translate(-24vh,-7.2%) !important;
+    transform: translate(-24vh,-7.5%) !important;
 }
 .skill_content_yline2{
     border-right:1px solid var(--main-red);
     height:65vh;
     width:1px;
     position:absolute;
-    transform: translate(24vh,-7.2%) !important;
+    transform: translate(24vh,-7.5%) !important;
+}
+.skill_scores{
+    transform:translate(40%,0);
+    
 }
 .skill_score{
     font-size:3em;
+}
+.skill_total{
+    font-size:1.5em;
+}
+.skill_img{
+    width:130px;
+    height:130px;
+    transform:translate(-60%,-25%);
 }
 
 /* contact me */
