@@ -10,6 +10,7 @@
     --main-darkgray:#595959;
     --main-purewhite:#f7f7f7;
     --main-background_white:#EEECE8;
+    --main-background_white_o:#eeece8;
 }
 
 
@@ -108,6 +109,19 @@
     position: relative;
     overflow:hidden;
 }
+/* connect_bg */
+/* .connect_bg{
+    height:20vh;
+    width:100%;
+background: linear-gradient(var(--main-background_white_o),var(--main-background_white));
+} */
+/* reserve_spacing */
+.reserve_spacing{
+    height:20vh;
+    width:100%;
+    background-color:var(--main-background_white);
+}
+
 
 /* introduction */
 
