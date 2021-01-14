@@ -1,0 +1,69 @@
+<div class="file">
+            <div class="file_navall"><span>ALL</span></div>
+            <div class="file_navf"></div>
+            <div class="file_navb"></div>
+        </div>
+
+
+
+---html
+
+
+
+
+.file{
+    position: relative;;
+    border:1px #eee solid;
+    min-height:70vh;
+    width:60vw;
+    border-radius: 3px 0 3px 3px;
+    overflow: visible;
+    --navh:15vh;
+}
+
+.file span{
+    writing-mode: vertical-lr;
+    box-sizing: border-box;
+    font-size:1.2em;
+    letter-spacing: .1em;
+    color:#fff;
+}
+
+.file_navall{
+    position:absolute;
+    height:var(--navh);
+    width:5vw;
+    top:-1px;
+    border-radius: 0 5px 5px 0;
+    background-color: rgb(187, 54, 54);
+    box-shadow:3px 3px 10px 0px #111, inset 2px 2px 8px 0px rgb(191 94 94);
+    left:calc(60vw - 1px);
+    z-index:5;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.file_navf{
+    position:absolute;
+    height:var(--navh);
+    width:5vw;
+    top:calc(var(--navh) - 1px);
+    border-radius: 0 5px 5px 0;
+    background-color: rgb(31, 19, 82);
+    left:calc(60vw - 1px);
+    z-index:4;
+}
+.file_navb{
+    position:absolute;
+    height:var(--navh);
+    width:5vw;
+    top:calc(var(--navh) * 2 - 1px);
+    border-radius: 0 5px 5px 0;
+    background-color: #eee;
+    left:calc(60vw - 1px);
+    z-index:3;
+}
+
+
+---css
