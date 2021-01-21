@@ -6,6 +6,11 @@ session_start();
 $Login=new DB("login");
 $BasicIntro=new DB("basic_intro");
 $SelfIntro=new DB("self_intro");
+$SelfPic=new DB("image");
+$Work=new DB("work_experience");
+$Por=new DB("porfolio");
+$Sk=new DB("skills");
+$Skt=new DB("sk_text");
 
 
 
@@ -85,7 +90,7 @@ function count(...$arr){
     if(isset($arr[1])){
         $sql.=$arr[1];
     }
-    echo $sql;
+    // echo $sql;
     return $this->pdo->query($sql)->fetchcolumn();
 }
 
@@ -110,6 +115,11 @@ function save($arr){
 function q($sql){
     
     return $this->pdo->query($sql)->fetch();
+}
+
+function qall($sql){
+    
+    return $this->pdo->query($sql)->fetchAll();
 }
 
 }

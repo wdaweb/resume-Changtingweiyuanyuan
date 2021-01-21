@@ -12,6 +12,8 @@ include_once "base.php";
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
     <link rel="stylesheet" type="text/css" href="admin.css">
     <title>管理頁面</title>
 </head>
@@ -23,6 +25,7 @@ include_once "base.php";
     <a href="?do=skills">SKILLS</a>
     <a href="?do=porfolio">PORTFOLIO</a>
     <a href="?do=contact">CONTACT</a>
+    <a href="?do=album">ALBUM</a>
 </div>
 <div class="admin_content">
     

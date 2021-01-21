@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-
+<?php
+include_once "base.php";
+?>
 
 
 <div class="banner">
@@ -78,29 +80,55 @@
     <div class="main_block">
     <div class="introduction">
     <p class="intro_title text-left col-12" id="intro">Introduction...</p>
+<?php
+$bis=$BasicIntro->all();
+// print_r($bis);
+?>
     <div class="intro_line col-3"></div>
     <div class="intro_contents row">
         <div class="intro_pic col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-            <img src="intro_img/mypic.jpg">
+            <?php
+            $pic=$SelfPic->find(['intro'=>'1','sh'=>'1']);
+            ?>
+            <img src="self_pic/<?=$pic['img'];?>">
         </div>
         <div class="intro_text col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7 p-4">
             <span class="intro_h3">About me</span><br>
-            嗨!我是<span id="intro_name">庭瑋</span>, 
+            我是
+            <span id="intro_name">
+                <?=$bis[0]['name']?>
+            </span>, 
             個性較活潑, 對生活充滿好奇心
             <br>
-            畢業於<span id="intro_graduation">德明財經科技大學-行銷管理系</span><br>
-            現居地 <span id="intro_addr">新北市,永和區</span><br>
-            目前期望職位 <span id="intro_position">前後端工程師</span><br>
-            <span id="intro_email">yuan097@kimo.com</span>
-            <hr>
-            <span id="self_intro_c">
-            之前接觸到了前端技術,閒暇時間購買Udemy線上課程自學,
-            因緣際會下參加了泰山職訓的甄試便開始學習程式技術,
-            在寫程式的過程也獲得了些許的成就感,
-            期盼未來能與工作上的夥伴一同進步!
+            畢業於
+            <span id="intro_graduation">
+                <?=$bis[0]['graduate']?>
+            </span><br>
+            現居地
+            <span id="intro_addr">
+                <?=$bis[0]['addr']?>
+            </span><br>
+            目前期望職位
+            <span id="intro_position">
+                <?=$bis[0]['position']?>
+            </span><br>
+            <span id="intro_email">
+                <?=$bis[0]['email']?>
             </span>
+
+            <hr>
+<?php
+$sis=$SelfIntro->find(['sh'=>'1']);
+// print_r($sis);
+?>
+<div id="self_intro_c">
+<?= nl2br($sis['textC']);?>
+</div>
             <br>
-            <span id="self_intro_e">英文簡單自我介紹</span>
+            <br>
+<div id="self_intro_e">
+<?= nl2br($sis['textE']);?>
+</div>
         </div>
     </div>
     </div>
@@ -112,27 +140,37 @@
     <!-- <img src="image/r3bg1.png" class="img-fluid work_bgpic1"> -->
     <!-- <img src="image/r3bg2.png" class="img-fluid work_bgpic2"> -->
 <div class="work_experience">
+<?php
+$wks=$Work->all();
+// print_r($wks);
+
+$wkpic=$SelfPic->all(['wk'=>'1','sh'=>'1']);
+// print_r($wkpic);
+
+?>
     <p class="work_title col-12 text-right" id="wk">Work Experience.</p>
     <div class="work_line offset-9 col-3"></div>
     <div class="work_content">
-        <div class="work-items wi1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident nemo perspiciatis pl23ef
-            <img src="image/boo.jpg" class="work-img1 img-fluid">
+        <div class="work-items wi1">
+<?= nl2br($wks[0]['text']);?>
+            <img src="self_pic/<?=$wkpic[0]['img'];?>" class="work-img1 img-fluid">
         </div>
-        <div class="work-items wi2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident nemo perspiciatis placeat qui m omnis reiciendis.</div>
-        <div class="work-items wi3">Lorem ipsum dolor sit, amet consectetur adipisiciit. Provident nemo perspiciatis, velit veniam omnis reiciendis.
-            <img src="image/qq.jpg" class="work-img3 img-fluid">
+        <div class="work-items wi2">
+<?= nl2br($wks[1]['text']);?>
+        </div>
+        <div class="work-items wi3">
+<?= nl2br($wks[2]['text']);?>
+            <img src="self_pic/<?=$wkpic[1]['img'];?>" class="work-img3 img-fluid">
         </div>
     </div>
 </div>
 
-<!-- <div class="reserve_spacing_b">在一張滿版灰色照片(30vh)</div> -->
-
-<!-- <div class="reserve_spacing"></div> -->
 <!-- skills -->
 
 <div class="skills">
     <p class="skill_title text-left col-12" id="skill">Skills...</p>
     <div class="skill_line col-3"></div>
+
     <div class="skill_nav offset-0 col-12 offset-sm-0 col-sm-12 offset-lg-5 col-lg-7">
         <div class="skill_loader loader1">
             <span></span>
@@ -144,56 +182,108 @@
             <span></span>
         </div>
     </div>
+
+
+<?php
+$skts=$Skt->all();
+// print_r($skts);
+?>
     <div class="skill_content">
         <!-- 長條圖 -->
-        <div class="skill_barchart col-12 d-flex">
-            <div class="skill_barchart_text">PHP</div>
-            <div class="skill_bar d-flex">
-                <span class="bar_bg"></span>
+        <div class="skill_front col-6">
+            <div>
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <span><?=$skts[0]['title']?></span>
+            </div>
+            <div class="skill_front_text">
+<?= nl2br($skts[0]['text']);?>
+            </div>
+            <div class="skills_op">
+                <!-- 輸入具備技能 -->
+                <?php
+                $sks=$Sk->all(['ct'=>'frontend','sh'=>'1']);
+                foreach($sks as $sk){
+                    // print_r($sk);
+                ?>
+                <span class="skill_option">
+                    <?=$sk['name'];?>
+                </span>
+                <?php
+                }?>
             </div>
         </div>
 
-        <div class="skill_barchart col-12 d-flex">
-            <div class="skill_barchart_text">JavaScript</div>
-            <div class="skill_bar d-flex">
-                <span class="bar_bg"></span>
+        <div class="skill_backend col-6">
+            <div>
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <span><?=$skts[1]['title']?></span>
+            </div>
+            <div class="skill_backend_text">
+<?= nl2br($skts[1]['text']);?>
+            </div>
+            <div class="skills_op">
+                <!-- 輸入具備技能 -->
+                <?php
+                $sks=$Sk->all(['ct'=>'backend','sh'=>'1']);
+                foreach($sks as $sk){
+                    // print_r($sk);
+                ?>
+                <span class="skill_option">
+                    <?=$sk['name'];?>
+                </span>
+                <?php
+                }?>
             </div>
         </div>
 
-        <div class="skill_barchart col-12 d-flex">
-            <div class="skill_barchart_text">Photoshop</div>
-            <div class="skill_bar d-flex">
-                <span class="bar_bg"></span>
+        <div class="skill_content_line col-12"></div>
+
+        <div class="skill_graphic col-6">
+            <div>
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <span><?=$skts[2]['title']?></span>
+            </div>
+            <div class="skill_graphic_text">
+<?= nl2br($skts[2]['text']);?>
+            </div>
+            <div class="skills_op">
+                <!-- 輸入具備技能 -->
+                <?php
+                $sks=$Sk->all(['ct'=>'graphic_design','sh'=>'1']);
+                foreach($sks as $sk){
+                    // print_r($sk);
+                ?>
+                <span class="skill_option">
+                    <?=$sk['name'];?>
+                </span>
+                <?php
+                }?>
             </div>
         </div>
 
-        <div class="skill_barchart col-12 d-flex">
-            <div class="skill_barchart_text">MySQL</div>
-            <div class="skill_bar d-flex">
-                <span class="bar_bg"></span>
+        <div class="skill_others col-6">
+            <div>
+            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <span><?=$skts[3]['title']?></span>
+            </div>
+            <div class="skill_others_text">
+<?= nl2br($skts[3]['text']);?>
+            </div>
+            <div class="skills_op">
+                <!-- 輸入具備技能 -->
+                <?php
+                $sks=$Sk->all(['ct'=>'others','sh'=>'1']);
+                foreach($sks as $sk){
+                    // print_r($sk);
+                ?>
+                <span class="skill_option">
+                    <?=$sk['name'];?>
+                </span>
+                <?php
+                }?>
             </div>
         </div>
-
-        <div class="skill_barchart col-12 d-flex">
-            <div class="skill_barchart_text">Bootstrap</div>
-            <div class="skill_bar d-flex">
-                <span class="bar_bg"></span>
-            </div>
-        </div>
-
-        <div class="skill_barchart col-12 d-flex">
-            <div class="skill_barchart_text">Illustrator</div>
-            <div class="skill_bar d-flex">
-                <span class="bar_bg"></span>
-            </div>
-        </div>
-
-        <div class="skill_barchart col-12 d-flex">
-            <div class="skill_barchart_text">JQoery</div>
-            <div class="skill_bar d-flex">
-                <span class="bar_bg"></span>
-            </div>
-        </div>
+        
     </div>
 </div>
 
@@ -203,11 +293,85 @@
     <p class="por_title col-12 text-right" data-text="Contact Me." id="por">Portfolio.</p>
     <div class="work_line offset-9 col-3"></div>
     <div class="por_text">
-        這邊是我在泰山職訓半年的作品:)<br>
-        最下面
+        下面是我在泰山職訓半年的作品<br>
 
     </div>
     <div class="por_content">
+    
+    <?php
+    $pors=$Por->all(['sh'=>'1']);
+    // print_r($pors);
+    foreach($pors as $por){
+    // print_r($por);
+    $porbgs=$SelfPic->find(['porName'=>$por['name']]);
+
+    echo '<div class="por_card card"><span></span><span></span><span></span><span></span><div class="card_content"><h2>';
+    echo ($por['php'])?'php<br>':'';
+    echo ($por['mysql'])?'mySQL<br>':'';
+    echo ($por['js'])?'javaScript<br>':'';
+    echo ($por['jquery'])?'jQuery<br>':'';
+    echo ($por['css'])?'css<br>':'';
+    echo ($por['bootstrap'])?'bootstrap<br>':'';
+    echo ($por['ps'])?'photoshop<br>':'';
+    echo ($por['ai'])?'illustrator<br>':'';
+    echo'</h2><h3>'.$por['name'].'</h3>';
+    echo (!empty($por['href']))?'<a href="'.$por['href'].'" target="_blank">':'';
+    echo '<div class="porimg"><img class="porimgg" src="';
+    echo 'self_pic/'.($porbgs['img']);
+    echo '"><div class="porimgg wave1"></div><div class="porimgg wave2"></div><div class="porimgg wave3"></div><div class="porimgg wave4"></div><div class="porimgg wave5"></div></div>';
+    echo (!empty($por['href']))?"</a>":'';
+    echo '</div></div>'
+    ?>
+        <!--
+兩個版本=>網址!=NULL
+        <div class="por_card card">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="card_content">
+                <h2>
+                    技能+<BR>
+                </h2>
+                <h3>作品名稱</h3>
+                <div class="porimg">
+                    <img class="porimgg" src="圖片">
+                    <div class="porimgg wave1"></div>
+                    <div class="porimgg wave2"></div>
+                    <div class="porimgg wave3"></div>
+                    <div class="porimgg wave4"></div>
+                    <div class="porimgg wave5"></div>
+                </div>
+            </div>
+        </div>
+-->
+
+<!--
+    =>NULL
+        <div class="por_card card">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="card_content">
+                <h2>
+                    技能+<BR>
+                </h2>
+                <h3>作品名稱</h3>
+                <a href="網址" target="_blank">   ＊
+                <div class="porimg">
+                    <img class="porimgg" src="圖片">
+                    <div class="porimgg wave1"></div>
+                    <div class="porimgg wave2"></div>
+                    <div class="porimgg wave3"></div>
+                    <div class="porimgg wave4"></div>
+                    <div class="porimgg wave5"></div>
+                </div>
+                </a>   ＊
+            </div>
+        </div>
+-->
+<!--
         <div class="por_card card">
             <span></span>
             <span></span>
@@ -226,78 +390,9 @@
                 </div>
             </div>
         </div>
-        <div class="por_card card">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="card_content">
-                <h2>php<br>css</h2>
-                <h3>萬年曆作品</h3>
-                <div class="porimg">
-                    <img class="porimgg" src="z/starry3.jpg">
-                    <div class="porimgg wave1"></div>
-                    <div class="porimgg wave2"></div>
-                    <div class="porimgg wave3"></div>
-                    <div class="porimgg wave4"></div>
-                    <div class="porimgg wave5"></div>
-                </div>
-            </div>
-        </div>
-        <div class="por_card card">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="card_content">
-                <h2>php<br>css</h2>
-                <h3>萬年曆作品</h3>
-                <div class="porimg">
-                    <img class="porimgg" src="z/starry3.jpg">
-                    <div class="porimgg wave1"></div>
-                    <div class="porimgg wave2"></div>
-                    <div class="porimgg wave3"></div>
-                    <div class="porimgg wave4"></div>
-                    <div class="porimgg wave5"></div>
-                </div>
-            </div>
-        </div>
-        <div class="por_card card">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="card_content">
-                <h2>php<br>css</h2>
-                <h3>萬年曆作品</h3>
-                <div class="porimg">
-                    <img class="porimgg" src="z/starry3.jpg">
-                    <div class="porimgg wave1"></div>
-                    <div class="porimgg wave2"></div>
-                    <div class="porimgg wave3"></div>
-                    <div class="porimgg wave4"></div>
-                    <div class="porimgg wave5"></div>
-                </div>
-            </div>
-        </div>
-        <div class="por_card card">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div class="card_content">
-                <h2>php<br>css</h2>
-                <h3>萬年曆作品</h3>
-                <div class="porimg">
-                    <img class="porimgg" src="z/starry3.jpg">
-                    <div class="porimgg wave1"></div>
-                    <div class="porimgg wave2"></div>
-                    <div class="porimgg wave3"></div>
-                    <div class="porimgg wave4"></div>
-                    <div class="porimgg wave5"></div>
-                </div>
-            </div>
-        </div>
+    -->
+<?php
+}?>
 
     </div>
 
