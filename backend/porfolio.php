@@ -83,8 +83,6 @@ span{
 <pre>
 此區域可修改隱藏及顯示作品
 點擊鉛筆圖樣 可修改單筆作品資料
-若作品為圖片 <u>連結可不輸入</u>
-下方可新增單筆作品
 </pre>
 <hr><br>
 
@@ -266,7 +264,14 @@ foreach($pors as $k => $por){
 
 <form action="api/uploadImgPor.php" method="post" id="porInset_form" onsubmit="return submitForm()" enctype="multipart/form-data">
 <h3>新增作品集</h3>
+
 <br>
+<pre>
+可新增單筆作品
+若作品為圖片 <u>連結可不輸入</u>
+</pre>
+<hr><br>
+
 <div class="por_insert d-flex">
     <div class="col-4">
         <div>作品名稱:</div>

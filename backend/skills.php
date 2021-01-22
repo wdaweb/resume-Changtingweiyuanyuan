@@ -59,7 +59,8 @@
         align-items: center;
     }
     .fa-bolt{
-        font-size: 1.2em;
+        font-size: 1.4em;
+        padding-right:5px;
     }
 </style>
 

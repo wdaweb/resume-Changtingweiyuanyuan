@@ -17,7 +17,7 @@ body{
     width:100vw;
 }
 .wk{
-    border-bottom:#ddd 1px solid;
+    border-bottom:#db000050 1px solid;
     padding-bottom:5vh;
     margin-bottom:5vh;
     flex-wrap:wrap;
@@ -46,13 +46,7 @@ textarea:focus,select:focus,textarea,select{
     vertical-align: top;
     word-break:break-all
 }
-/* input:focus,select:focus,input,select{
-    caret-color:#db0000;
-    border:1px #db0000 dashed;
-    outline:none;
-    border-radius: 10px;
-    vertical-align: top;
-} */
+
 .wk_e{
     display:flex;
     flex-direction: column;
@@ -68,7 +62,6 @@ textarea:focus,select:focus,textarea,select{
 
 .uploadButton{
     align-items: center;
-    /* flex-direction: column; */
     margin:10%;
     margin-top:5%;
     margin-bottom:0;
@@ -111,20 +104,14 @@ form div input{
 }
 
 </style>
-<h3>目前工作經歷</h3>
+<h3>目前工作經歷修改</h3>
 
+<br>
 <pre>
-如有需要換行的地方請自行加入br
-或是前台抓資料再做判斷
-用ajx
--
-bug*
-圖片刪除 self_pic資料一併刪除
-刪除圖片時會全部一起刪:(
-
-取照片時只能兩張
+可做工作經歷的文字修改
 </pre>
-<div class="line"></div>
+<hr><br>
+
 
 
 <div class="wk_content d-flex">

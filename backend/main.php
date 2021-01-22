@@ -1,67 +1,45 @@
-<div class="z">
+<style>
+.line{
+    background-color: #db0000;
+    width:100%;
+    height:1px;
+    margin-top:5vh;
+    margin-bottom:5vh;
+    }
+</style>
+<h3>後台履歷管理</h3>
 
-學習進度->待學技能->
-今年修改
-
-
+<br>
 <pre>
-
-#INTRO
-DB:(id 姓名 地址 信箱 畢業地點 期望職位);
-DB:簡單學經歷自我介紹(id,C_text,sh,E_text);
-D
-
-中文intro:姓名,地址,信箱,畢業地點,期望職位
-英文intro:
-個人基本資料管理
-個人可公開的聯絡資料->#intro_basicInfo
-個人的生日等基本資料->#intro_basicInfo
-自我簡單介紹->#self_intro
-興趣。。。->#interest
-
-求職條件管理
-可新增數項求職條件（參考名家人力網站資料）
-可決定求職挑件的符合
-
-自傳管理
-可新增數份不同的自傳->
-可編輯或刪除自傳
-可決定哪一份自傳要顯示在後台
-
-
-#WORK
-
-
-學經歷管理
-可新增數筆個人的學歷及經歷
-可新增,修改,刪除學經歷
-可控制學經歷資料在前台是否顯示
-
-
-
-作品集管理
-可新增作品,作品形式可能是圖片或外部連結
-可編輯作品介紹並顯示在前台
-
-圖片管理
-可上傳圖片
-圖片有相簿或分類可供選擇
-前台可視需求將圖片插入任何區要的地方（進階）
-也可以單純一個前台功能用來顯示所有的相片
-
-首頁要能呈現後台資料庫所儲存的履歷表資料
-後台的履歷項目能控制是否顯示在前台
-
-
-
--
-履歷傳到cakeResume 並提供網址存放在指定URL位置
-作品集計畫：
-描述後續要完成的作品集項目
-哪些屬於前端 後端 視覺作品 及其他個人能力所產出的作品
-視覺計畫：
-描述墊子履歷要呈現的視覺風格 極簡/方塊/日誌/森林/卡通....
-
-
+履歷後台的簡單介紹及後續規劃
 </pre>
-</div>
+<hr><br>
+
+<h5>履歷風格為 <u style="color:#000;">極簡風 </u>
+<i class="fa fa-bolt" aria-hidden="true"></i>
+<i class="fa fa-bolt" aria-hidden="true"></i>
+
+</h5>
+各項功能在標題底下皆有說明<br>
+履歷後台等待調整部分為下:
+<br>
+<div class="line"></div>
+<br>
+<h5>後續會完成的作品集 
+<i class="fa fa-bolt" aria-hidden="true"></i>
+<i class="fa fa-bolt" aria-hidden="true"></i>
+</h5> 
+<br>
+
+<h5 style="color:#000;">FRONTEN::</h5>
+純js刻時鐘(css樣式)<br>
+jQuery釣魚遊戲(css樣式)<br>
+<hr><br>
+<h5 style="color:#000;">BACKEN::</h5>
+萬年曆(RWD)<br>
+發票系統(css樣式)<br>
+購物網站 乙級第四題調整(尚未開始)<br>
+<hr><br>
+<h5 style="color:#000;">GRAPHI::</h5>
+設計logo(ppt整合)<br>
+<br><br><br><br><br>

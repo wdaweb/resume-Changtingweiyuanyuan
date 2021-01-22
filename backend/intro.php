@@ -131,7 +131,7 @@ foreach($pics as $pic){
 <div class="selfPic_content d-flex">
 
     <div class="selfPic col-10 text-center">
-        <img src="self_pic/<?=$pic['img'];?>" style="width:50px;height:50px;">
+        <img src="self_pic/<?=$pic['img'];?>" style="width:100px;height:120px;">
     </div>
 
     <div class="show col-1">
